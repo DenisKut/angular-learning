@@ -1,0 +1,28 @@
+<div class="main-layout">
+	<header class="header">
+		<nav class="navigation">
+			<h1>Angular Learning Project</h1>
+			<ul class="nav-list">
+				<li>
+					<a routerLink="/components" routerLinkActive="active">Компоненты</a>
+				</li>
+				<li>
+					<a routerLink="/directives" routerLinkActive="active">Директивы</a>
+				</li>
+				<li><a routerLink="/pipes" routerLinkActive="active">Пайпы</a></li>
+				<li><a routerLink="/services" routerLinkActive="active">Сервисы</a></li>
+				<li><a routerLink="/routing" routerLinkActive="active">Роутинг</a></li>
+				<li><a routerLink="/forms" routerLinkActive="active">Формы</a></li>
+				<li><a routerLink="/http" routerLinkActive="active">HTTP</a></li>
+				<li><a routerLink="/state" routerLinkActive="active">Состояние</a></li>
+				<li>
+					<a routerLink="/advanced" routerLinkActive="active">Продвинутое</a>
+				</li>
+			</ul>
+		</nav>
+	</header>
+
+	<main class="main-content">
+		<router-outlet></router-outlet>
+	</main>
+</div>

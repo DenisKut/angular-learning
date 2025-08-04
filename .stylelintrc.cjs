@@ -2,7 +2,7 @@ module.exports = {
 	extends: ['stylelint-config-standard'],
 	plugins: ['stylelint-scss'],
 	rules: {
-		'color-hex-length': 'short',
+		// 'color-hex-length': 'long',
 		'selector-class-pattern': [
 			'^[a-z][a-z0-9]*(-[a-z0-9]+)*$',
 			{
