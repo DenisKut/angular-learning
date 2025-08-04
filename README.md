@@ -1,59 +1,114 @@
-# AngularLearning
+# Angular Learning Project
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.1.4.
+Этот проект создан для изучения Angular с настройкой современных инструментов разработки.
+
+Проект был сгенерирован с помощью [Angular CLI](https://github.com/angular/angular-cli) version 20.1.4.
+
+## Настройка инструментов разработки
+
+Проект настроен с использованием современных инструментов для обеспечения качества кода:
+
+### 🎨 Prettier
+
+- Автоматическое форматирование кода
+- Конфигурация в `.prettierrc`
+- Игнорируемые файлы в `.prettierignore`
+
+### 🔍 ESLint
+
+- Проверка качества TypeScript кода
+- Конфигурация в `eslint.config.js`
+- Включает правила для TypeScript и сортировки импортов
+
+### 🎯 Stylelint
+
+- Проверка качества CSS/SCSS кода
+- Конфигурация в `.stylelintrc.cjs`
+- Поддержка SCSS синтаксиса
+
+### 📝 Commitlint
+
+- Проверка формата коммитов согласно Conventional Commits
+- Конфигурация в `commitlint.config.js`
+
+### 🐶 Husky + Lint-staged
+
+- Автоматический запуск проверок перед коммитом
+- Pre-commit hook запускает lint-staged
+- Commit-msg hook проверяет формат сообщения коммита
 
 ## Development server
 
 To start a local development server, run:
 
 ```bash
-ng serve
+bun start
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+## Доступные команды
 
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+### Разработка
 
 ```bash
-ng generate component component-name
+bun start          # Запуск dev сервера (ng serve)
+bun run build      # Сборка проекта
+bun test           # Запуск тестов
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+### Проверка кода
 
 ```bash
-ng generate --help
+bun run lint              # Проверка TypeScript
+bun run lint:fix          # Исправление проблем ESLint
+bun run format            # Форматирование всех файлов
+bun run format:check      # Проверка форматирования
+bun run stylelint         # Проверка стилей
+bun run stylelint:fix     # Исправление проблем Stylelint
 ```
 
-## Building
+## Формат коммитов
 
-To build the project run:
+Используйте conventional commits формат:
+
+```
+<type>[optional scope]: <description>
+
+[optional body]
+
+[optional footer(s)]
+```
+
+### Типы коммитов:
+
+- `feat` — новая функциональность
+- `fix` — исправление бага
+- `docs` — только документация
+- `style` — форматирование
+- `refactor` — рефакторинг
+- `perf` — улучшение производительности
+- `test` — тесты
+- `chore` — обновление сборки/зависимостей
+- `ci` — изменения в CI/CD
+- `build` — изменения в сборке
+
+### Примеры:
 
 ```bash
-ng build
+git commit -m "feat: добавлен новый компонент"
+git commit -m "fix: исправлена ошибка валидации"
+git commit -m "docs: обновлена документация API"
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+## Рабочий процесс
 
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+1. Делайте изменения в коде
+2. При коммите автоматически запустятся:
+   - Prettier (форматирование)
+   - ESLint (проверка TypeScript)
+   - Stylelint (проверка стилей)
+   - Commitlint (проверка формата сообщения)
+3. Если есть ошибки - исправьте их и попробуйте снова
 
 ## Additional Resources
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+For more information on using the Angular CLI, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
