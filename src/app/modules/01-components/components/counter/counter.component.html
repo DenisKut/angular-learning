@@ -1,8 +1,37 @@
-<section class="counter">
-	<div class="counter__value">{{ count() }}</div>
-	<ul class="counter__controls">
-		<li class="counter__control-btn" (click)="decrement()">{{ '-' }}</li>
-		<li class="counter__control-btn" (click)="reset()">Reset</li>
-		<li class="counter__control-btn" (click)="increment()">{{ '+' }}</li>
-	</ul>
+<section class="counter-container">
+	<h2>Задание 1: Counter Component</h2>
+	<p>Создание базового компонента с внутренним состоянием</p>
+
+	<div class="theory">
+		<h3>Теория:</h3>
+		<ul>
+			<li>Создание standalone компонента</li>
+			<li>Использование signals для состояния</li>
+			<li>Event binding для обработки событий</li>
+			<li>Interpolation для отображения данных</li>
+		</ul>
+	</div>
+
+	<div class="practice">
+		<h3>Практика:</h3>
+		<div
+			class="practice__value"
+			[ngStyle]="{ color: count() % 10 == 0 ? 'red' : 'cyan' }"
+		>
+			{{ count() }}
+		</div>
+		<ul class="practice__controls">
+			@for (item of controlButtons; track $index) {
+				<li class="practice__control-btn">
+					<button
+						type="button"
+						(click)="$first ? decrement() : $last ? increment() : reset()"
+					>
+						{{ item.title }}
+					</button>
+				</li>
+			}
+		</ul>
+		<p>Computed value: {{ doubleCount() }}</p>
+	</div>
 </section>

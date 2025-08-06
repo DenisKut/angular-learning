@@ -1,0 +1,41 @@
+<section class="user-card-container">
+	<h2>Задание 2: User Card Component</h2>
+	<p>
+		Изучение &#64;Input и &#64;Output декораторов для взаимодействия между
+		компонентами
+	</p>
+
+	<div class="theory">
+		<h3>Теория:</h3>
+		<ul>
+			<li>&#64;Input() - получение данных от родительского компонента</li>
+			<li>&#64;Output() - передача событий родительскому компоненту</li>
+			<li>EventEmitter для создания кастомных событий</li>
+			<li>Property binding и Event binding</li>
+		</ul>
+	</div>
+
+	<div class="practice">
+		<h3>Практика:</h3>
+		<div class="demo-container">
+			<div class="user-cards">
+				<!-- Список users через for -->
+				<div class="selected-user">
+					<h3>Selected user info</h3>
+					<p class="selected-user__info-line">
+						<span>ID:</span>
+						<span>{{ 'value' }}</span>
+					</p>
+					<p class="selected-user__info-line">
+						<span>Name:</span>
+						<span>{{ 'value' }}</span>
+					</p>
+					<p class="selected-user__info-line">
+						<span>Email:</span>
+						<span>{{ 'value' }}</span>
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>

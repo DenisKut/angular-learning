@@ -1,13 +1,23 @@
-.counter {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
+.counter-container {
+	h2 {
+		margin: 0;
+	}
 
+	h2,
+	p {
+		padding-left: 10px;
+	}
+}
+
+.practice {
 	&__value {
+		padding: 10px 20px;
+		border: 1px solid #5e5252f3;
+		border-radius: 10px;
 		font-size: 18px;
 		font-style: italic;
 		font-weight: 500;
+		background-color: #6e8aa3;
 	}
 
 	&__controls {
@@ -21,8 +31,22 @@
 
 	&__control-btn {
 		list-style-type: none;
-		margin: 0 10px;
-		padding: 0.5rem;
-		border: solid 1px #975050;
+
+		button {
+			font-size: 1rem;
+			padding: 10px 15px;
+			margin: 0 10px;
+			border: 2px solid #2f5bc2c4;
+			background: white;
+			color: #2f5bc2c4;
+			border-radius: 10px;
+			cursor: pointer;
+			transition: all 0.3s ease;
+
+			&:hover:not(:disabled) {
+				background: #dd0031;
+				color: white;
+			}
+		}
 	}
 }
