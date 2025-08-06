@@ -1,0 +1,39 @@
+<div class="module-container">
+	<h1>Модуль 1: Компоненты</h1>
+	<p>Изучение основ создания и использования Angular компонентов</p>
+
+	<nav class="tasks-nav">
+		<h2>Практические задания:</h2>
+		<ul>
+			<li>
+				<a routerLink="counter" routerLinkActive="active">
+					1. Counter Component - Базовый компонент с состоянием
+				</a>
+			</li>
+			<li>
+				<a routerLink="user-card" routerLinkActive="active">
+					2. User Card - Компонент с Input/Output
+				</a>
+			</li>
+			<li>
+				<a routerLink="content-projection" routerLinkActive="active">
+					3. Content Projection - ng-content и проекция контента
+				</a>
+			</li>
+			<li>
+				<a routerLink="lifecycle" routerLinkActive="active">
+					4. Lifecycle Hooks - Жизненный цикл компонентов
+				</a>
+			</li>
+			<li>
+				<a routerLink="view-child" routerLinkActive="active">
+					5. ViewChild/ViewChildren - Работа с дочерними элементами
+				</a>
+			</li>
+		</ul>
+	</nav>
+
+	<div class="task-content">
+		<router-outlet></router-outlet>
+	</div>
+</div>

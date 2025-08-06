@@ -16,27 +16,6 @@ export const routes: Routes = [
 			{
 				path: 'components',
 				loadChildren: () => COMPONENTS_ROUTES
-			},
-			{
-				path: 'directives',
-				loadComponent: () =>
-					import('./modules/02-directives/directives-main.component').then(
-						c => c.DirectivesMainComponent
-					)
-			},
-			{
-				path: 'pipes',
-				loadComponent: () =>
-					import('./modules/03-pipes/pipes-main.component').then(
-						c => c.PipesMainComponent
-					)
-			},
-			{
-				path: 'services',
-				loadComponent: () =>
-					import('./modules/04-services/services-main.component').then(
-						c => c.ServicesMainComponent
-					)
 			}
 		]
 	},

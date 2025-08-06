@@ -1,0 +1,8 @@
+<section class="counter">
+	<div class="counter__value">{{ count() }}</div>
+	<ul class="counter__controls">
+		<li class="counter__control-btn" (click)="decrement()">{{ '-' }}</li>
+		<li class="counter__control-btn" (click)="reset()">Reset</li>
+		<li class="counter__control-btn" (click)="increment()">{{ '+' }}</li>
+	</ul>
+</section>

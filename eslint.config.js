@@ -117,8 +117,22 @@ export default [
 			// Дополнительные Angular правила
 			...additionalAngularRules,
 
-			// Импорты
-			'simple-import-sort/imports': 'warn',
+			// Импорты - настроим правильный порядок для Angular (оптимизированно)
+			'simple-import-sort/imports': [
+				'error', // Изменено с 'warn' на 'error' для автофикса
+				{
+					groups: [
+						// Angular импорты первыми
+						['^@angular'],
+						// Сторонние библиотеки
+						['^[^.]'],
+						// Относительные импорты из родительских директорий
+						['^\\.\\.'],
+						// Относительные импорты из текущей директории
+						['^\\./']
+					]
+				}
+			],
 			'simple-import-sort/exports': 'warn',
 
 			// Общие правила
@@ -146,7 +160,7 @@ export default [
 				'error',
 				{ maxComplexity: 10 }
 			],
-			'@angular-eslint/template/no-call-expression': 'warn',
+			// '@angular-eslint/template/no-call-expression': 'warn',
 
 			// Дополнительные правила для шаблонов
 			...additionalTemplateRules
