@@ -17,25 +17,38 @@
 
 	<div class="practice">
 		<h3>Практика:</h3>
-		<div class="demo-container">
-			<div class="user-cards">
-				<!-- Список users через for -->
-				<div class="selected-user">
-					<h3>Selected user info</h3>
-					<p class="selected-user__info-line">
-						<span>ID:</span>
-						<span>{{ 'value' }}</span>
-					</p>
-					<p class="selected-user__info-line">
-						<span>Name:</span>
-						<span>{{ 'value' }}</span>
-					</p>
-					<p class="selected-user__info-line">
-						<span>Email:</span>
-						<span>{{ 'value' }}</span>
-					</p>
-				</div>
+
+		<div class="user-cards">
+			<div class="controls">
+				<button type="reset" (click)="resetUserList()">Reset user-list</button>
+				<button type="button">Edit selected user</button>
 			</div>
+			@for (user of userList; track user.id) {
+				<app-user-card-item
+					[setUser]="user"
+					(clickedCard)="selectUser($event)"
+					(deletedCard)="deleteUser($event)"
+				/>
+			}
+			<div
+				class="selected-user"
+				*ngIf="selectedUser !== undefined; else unselected"
+			>
+				<h3>Selected user info</h3>
+				<p class="selected-user__info-line">
+					<span>ID:</span>
+					<span>{{ selectedUser.id }}</span>
+				</p>
+				<p class="selected-user__info-line">
+					<span>Name:</span>
+					<span>{{ selectedUser.name }}</span>
+				</p>
+				<p class="selected-user__info-line">
+					<span>Email:</span>
+					<span>{{ selectedUser.email }}</span>
+				</p>
+			</div>
+			<ng-template #unselected> User wasn't selected </ng-template>
 		</div>
 	</div>
 </section>
