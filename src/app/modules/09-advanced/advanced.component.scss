@@ -1,0 +1,15 @@
+ul {
+	list-style: none;
+}
+
+li {
+	display: flex;
+	flex-direction: column;
+	padding-left: 0;
+	margin: 10px;
+	border: 1px solid black;
+}
+
+img {
+	width: 80px;
+}

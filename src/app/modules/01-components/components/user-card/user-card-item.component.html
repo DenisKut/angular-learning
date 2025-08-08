@@ -1,0 +1,23 @@
+<div class="user-card-item" (click)="select()">
+	<div class="user-card-item__info">
+		<p class="user-card-item__info-line">
+			<span>ID:</span>
+			<span>{{ userInfo.id }}</span>
+		</p>
+		<p class="user-card-item__info-line">
+			<span>Name:</span>
+			<span>{{ userInfo.name }}</span>
+		</p>
+		<p class="user-card-item__info-line">
+			<span>Email:</span>
+			<span>{{ userInfo.email }}</span>
+		</p>
+	</div>
+	<img
+		src="https://i.pravatar.cc/150?u={{ userInfo.name }}"
+		[alt]="'фото ' + userInfo.name"
+	/>
+	<button class="delete-btn" type="button" (click)="selectForDelete($event)">
+		delete
+	</button>
+</div>

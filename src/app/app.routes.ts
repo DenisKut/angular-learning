@@ -2,6 +2,7 @@ import { Routes } from '@angular/router';
 
 import { MainLayoutComponent } from './layouts/main-layout/main-layout.component';
 import { COMPONENTS_ROUTES } from './modules/01-components/components.routes';
+import { ADVANCED_ROUTES } from './modules/09-advanced/advanced.routes';
 
 export const routes: Routes = [
 	{
@@ -16,6 +17,10 @@ export const routes: Routes = [
 			{
 				path: 'components',
 				loadChildren: () => COMPONENTS_ROUTES
+			},
+			{
+				path: 'advanced',
+				loadChildren: () => ADVANCED_ROUTES
 			}
 		]
 	},

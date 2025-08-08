@@ -1,0 +1,49 @@
+@let productsArr = products | async;
+<ul>
+	@for (product of productsArr; track $index) {
+		<li>
+			<p>
+				<span>id: </span>
+				<span>{{ product.id }}</span>
+			</p>
+			<p>
+				<span>title: </span>
+				<span>{{ product.title }}</span>
+			</p>
+			<p>
+				<span>description: </span>
+				<span>{{ product.description }}</span>
+			</p>
+			<p>
+				<span>category: </span>
+				<span>{{ product.category }}</span>
+			</p>
+			<p>
+				<span>image: </span>
+				<img src="{{ product.image }}" alt="Image of product" />
+			</p>
+			<div>
+				<span>rating: </span>
+				<p>
+					<span>rate: </span>
+					<span>{{ product.rating.rate }}</span>
+				</p>
+				<p>
+					<span>rate: </span>
+					<span>{{ product.rating.count }}</span>
+				</p>
+			</div>
+			<div>
+				<h4>Finally</h4>
+				<p>
+					<span>price: </span>
+					<span>{{ product.price }}</span>
+				</p>
+				<p>
+					<span>sales: </span>
+					<span>{{ product.sales | percent }}</span>
+				</p>
+			</div>
+		</li>
+	}
+</ul>
